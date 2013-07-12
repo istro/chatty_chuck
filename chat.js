@@ -1,10 +1,16 @@
 $(function(){
 
   // Add timeNow function to date object - for convenience of parsing.
-  // I was too lazy to write that one myself - took it from StackOverflow.
+  // I was too lazy to write that one myself -
+  // got it from StackOverflow (improved the spacing and newlines though).
 
   Date.prototype.timeNow = function(){
-       return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+    return ((this.getHours() < 10) ? "0" : "") +
+            this.getHours() + ":" +
+            ((this.getMinutes() < 10) ? "0" : "" ) +
+            this.getMinutes() + ":" +
+            ((this.getSeconds() < 10) ? "0" : "") +
+            this.getSeconds();
   };
 
   // From here on, just my own code :)
