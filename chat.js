@@ -17,7 +17,8 @@ $(function(){
 
   var users = $('#users ul'),
       mess = $('#messages'),
-      user_said = $('#action input');
+      user_said = $('#action input'),
+      self = this;
 
   var addUser = function(name){
     $('#users ul').prepend('<li>'+name+'</li>');
@@ -55,5 +56,51 @@ $(function(){
       sendUserMessage();
     }
   });
+
+  // Set up variable interval for calling api's
+  var next = 1000+Math.random()*9000;
+
+  var getMessage = function(){
+    next = 2000+Math.random()*4000;
+    // var askNext = Math.random() < 0.2 ? askChuck : askLovers;
+    // askNext();
+    askChuck();
+  };
+
+  var askChuck = function(){
+    $.ajax({
+      url: 'http://api.icndb.com/jokes/random?limitTo=[nerdy]',
+      method: 'get',
+      success: parseChuck
+    });
+  }
+
+  var parseChuck = function(data){
+    var result = JSON.parse(data);
+    sendMessage("Ha! "+result['value']['joke'].replace(/Chuck Norris/g, 'I'), "Chuck Norris");
+  }
+
+  var askLovers = function(){
+    $.ajax({
+      // url: 'http://iheartquotes.com/api/v1/random?max_characters=100',
+      method: 'get',
+      dataType: 'jsonp',
+      success: parseLovers
+    });
+  }
+
+  var parseLovers = function(data){
+    console.log(data);
+    // parse data
+  }
+
+  setInterval(getMessage, next)
+
+
+// http://api.icndb.com/jokes/random?limitTo=[nerdy] ->
+// { "type": "success", "value": { "id": 547, "joke": "Product Owners never ask Chuck Norris for more features. They ask for mercy.", "categories": ["nerdy"] } }
+
+// http://iheartquotes.com/api/v1/random?format=json&max_characters=100
+//{"json_class":"Fortune","tags":["humorix_misc"],"quote":"A fool and his money are soon using Windows.","link":"http://iheartquotes.com/fortune/show/8167","source":"humorix_misc"}
 
 });
