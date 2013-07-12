@@ -1,0 +1,86 @@
+#action {
+  border-top: 1px dashed blue;
+  width: calc(100% - 20px);
+}
+
+#action input {
+  width: 60%;
+}
+
+#chat {
+  border: 1px solid olive;
+  height: 80vh;
+  margin-top: 10vh;
+  position: relative;
+  width: 70vw;
+}
+
+#users {
+  background: #d5e8d3;
+  margin: 10px 10px 10px 0;
+  max-height: 71vh;
+  min-height: 71vh;
+  overflow-y: scroll;
+  width: 200px;
+}
+
+#users div {
+  font-weight: 700;
+  margin: 10px;
+}
+
+#users ul {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+#messages {
+  font-style: italic;
+  margin: 10px 0 10px 10px;
+  max-height: 72vh;
+  overflow-y: scroll;
+  padding-right: 15px; /* padding added for disappearing scrollbar of chrome & safari */
+  width: calc(100% - 240px);
+}
+
+#messages h1 {
+  font-style: normal;
+  margin: 10px 0 10px 0;
+}
+
+#messages .mess {
+  font-size: 19px;
+  font-style: normal;
+  line-height: 1.5em;
+}
+
+#messages .name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#messages .time {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.bottom {
+  bottom:0;  
+  position:absolute;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.ib {
+  display: inline-block;
+}
+
+.right {
+  float: right;
+}
+
+.p10 {
+  padding: 10px;
+}
