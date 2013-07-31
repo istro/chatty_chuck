@@ -12,7 +12,7 @@ At random intervals between 2-5 seconds one of the different API's is called. Ch
 
 #### HOWEVER, I got stuck on I♡quotes api not supporting `jsonp`.
 
-Sucks. I'll use the hints from [this](http://stackoverflow.com/questions/13464619/how-do-i-interpret-json-if-jquery-thinks-it-is-receiving-a-jsonp-request) and [this](http://stackoverflow.com/questions/7936610/json-uncaught-syntaxerror-unexpected-token) answer to work it out later.
+Sucks. I'll use the hints from [this](http://stackoverflow.com/questions/13464619/how-do-i-interpret-json-if-jquery-thinks-it-is-receiving-a-jsonp-request) or [this](http://stackoverflow.com/questions/7936610/json-uncaught-syntaxerror-unexpected-token) answers to work it out later.
 
 Also I want to add another user - crazy russian - using [fucking-great-advice api](http://fucking-great-advice.ru/api/) - alas, they also don't support `jsonp`. I suppose I'll need to write a re-routing method that could call the apis from the server and give the results back to me on the front-end. Oh well, when I have time.
 
@@ -25,3 +25,4 @@ Additional bugs I'm aware of but  I don't have steam to address right now:
 - design is far from perfect
 - styling is not responsive for smaller devices
 - Chuck's grammar leaves much to be desired
+- Safari is not supported (safari doesn't support CSS3 calculation functions yet, and I didn't write conditional styling to account for that)
