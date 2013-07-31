@@ -61,7 +61,7 @@ $(function(){
   var next = 1000+Math.random()*9000;
 
   var getMessage = function(){
-    next = 2000+Math.random()*4000;
+    next = 3000+Math.random()*5000;
     // var askNext = Math.random() < 0.2 ? askChuck : askLovers;
     // askNext();
     askChuck();
@@ -75,8 +75,7 @@ $(function(){
     });
   }
 
-  var parseChuck = function(data){
-    var result = JSON.parse(data);
+  var parseChuck = function(result){
     sendMessage("Ha! "+result['value']['joke'].replace(/Chuck Norris/g, 'I'), "Chuck Norris");
   }
 
